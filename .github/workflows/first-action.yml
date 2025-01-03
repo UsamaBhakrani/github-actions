@@ -9,7 +9,7 @@ jobs:
       - name: Switch_Dir
         run: cd Starting_Project
       - name: Install_NodeJS
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
       - name: Install_Dependencies
