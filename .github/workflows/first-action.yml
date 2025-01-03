@@ -1,12 +1,18 @@
-# This is a basic workflow to help you get started with Actions
-
-name: First_Workflow
-on: workflow_dispatch
+name: Test Project
+on: push
 jobs:
-  first_job:
+  Run_test:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Greeting
-        run: echo "Hello, world!"
-      - name: Print Goodbye
-        run: echo "Done - bye!"
+      - name: Get_Code
+        uses: actions/checkout@v4
+      - name: Switch_Dir
+        run: cd Starting_Project
+      - name: Install_NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install_Dependencies
+        run: npm ci
+      - name: Run_Tests
+        run: npm run test
