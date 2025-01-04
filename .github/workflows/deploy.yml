@@ -30,3 +30,9 @@ jobs:
         run: npm run build
       - name: Deploy
         run: echo 'Deploying ...'
+  info:
+    needs: deploy
+    runs-on: ubuntu_latest
+    steps:
+      - name: Output Github Context
+        run: echo "${{ toJSON(github) }}"
