@@ -31,8 +31,7 @@ jobs:
       - name: Deploy
         run: echo 'Deploying ...'
   info:
-    needs: deploy
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Output Github Context
+      - name: Output GitHub context
         run: echo "${{ toJSON(github) }}"
